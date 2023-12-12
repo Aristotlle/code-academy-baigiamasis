@@ -10,10 +10,6 @@ Analyze data to understand team strengths, weaknesses, and overall dynamics.
 Make informed predictions about future matches.
 Utilize current season statistics to forecast outcomes.
 
-pagrindiniai dependencies (python, django ir t.t. versijos.
-2 - 3 screen shotai ką galima nuveikt, statai, prediction
-prie kodo komentarai
-
 ## Dependencies
 
 List of dependencies required to run this project:

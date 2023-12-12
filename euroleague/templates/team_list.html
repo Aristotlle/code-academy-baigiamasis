@@ -3,6 +3,21 @@
 {% block "content" %}
 
 {% load static %}
+
+<script>
+  window.onload = () => {
+  let maxHeight = 0;
+  document.querySelectorAll('.card').forEach(card => {
+    if (card.offsetHeight > maxHeight) {
+      maxHeight = card.offsetHeight;
+    }
+  });
+
+  document.querySelectorAll('.card').forEach(card => {
+    card.style.height = maxHeight + 'px';
+  });
+};
+</script>
     <h1>Teams List</h1></br>
     {% if team_list %}
     <div class="row">

@@ -70,8 +70,18 @@
 
 
 .image-overlay-container {
+  display: flex;
   position: relative;
   background-size: cover;
+  background-position:50% 75%; /* Adjust this to change the position */
+  height: 300px; /* Set a fixed height */
+}
+
+.image-overlay-result-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  background-size: cover; /* Ensure the background covers the entire container */
   background-position:50% 75%; /* Adjust this to change the position */
   height: 300px; /* Set a fixed height */
 }
@@ -200,7 +210,7 @@
 /* index */
 
 .fact-section {
-  background-color: #ff6f00; /* The orange background color from the image */
+  background-color: #19893b; /* The orange background color from the image */
   color: white; /* White text color for contrast */
   padding: 20px; /* Padding around the section */
   border-radius: 10px; /* Rounded corners like in the image */
@@ -221,6 +231,19 @@
 }
 
 /* table for prediction result */
+
+.prediction-result-container {
+  background-color: rgba(128, 128, 128, 0.8); /* Grey semi-transparent background */
+  color: white; /* White text color */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 80%; /* Adjust the width as needed */
+  max-width: 600px; /* Prevents the container from becoming too wide on large screens */
+  text-align: center; /* Center-align the text */
+  font-size: 1.5em; /* Larger text size */
+}
+
 
 .team-averages-container table {
   width: 100%;
@@ -250,6 +273,11 @@
 /* for spaced in predict_result view */
 
 .spaced-container {
+  margin-top: 30px;
+  margin-bottom: 30px; /* Adjust this value as needed */
+}
+
+.spaced-container1 {
   margin-bottom: 30px; /* Adjust this value as needed */
 }
 
@@ -290,4 +318,80 @@
 /* Row hover effect */
 .stats.table-container tr:hover {
   background-color: #ddd; /* Slightly darker gray on hover */
+}
+
+
+/* for team_list.html */
+
+
+/* Card container adjustments */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.col-md-4 {
+  display: flex;
+  padding-right: 15px;
+  padding-left: 15px;
+  width: 33.3333%; /* Adjust width to 1/3 of the container */
+}
+
+/* Uniform card styling */
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distributes space evenly within the card */
+  height: 100%; /* Makes all cards in a row the same height */
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+.card-img-top {
+  width: 100%;
+  height: 180px; /* Fixed height for images */
+  object-fit: cover; /* Ensures the image covers the area */
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card-body {
+  padding: 15px;
+  text-align: center;
+  flex-grow: 1; /* Allows the body to expand and fill space */
+}
+
+.card-subtitle, .card-text {
+  margin-bottom: 10px;
+}
+
+.card-text a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.card-text a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .col-md-4 {
+    width: 50%; /* 2 cards per row on smaller screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .col-md-4 {
+    width: 100%; /* 1 card per row on extra small screens */
+  }
 }

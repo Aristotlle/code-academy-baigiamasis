@@ -3,29 +3,24 @@
 
 {% block full_width_content %}
 <!-- Full-width image with background image -->
-<div class="image-overlay-container" style="background-image: url('{{ MEDIA_URL }}team_logos/z_arena.png');">
-    
-    <!-- Overlay content -->
-    <div class="overlay-content">
-        {% if team.logo %}
-            <img src="{{ team.logo.url }}" alt="{{ team.name }}" class="team-logo-overlay">
-        {% else %}
-            <img src="{{ MEDIA_URL }}team_logos/no_image.png" alt="No image available" class="team-logo-overlay">
-        {% endif %}
-        
-        <h1 class="team-name-overlay">{{ team.name }}</h1>
-        <p class="team-city-overlay"><strong>City:</strong> {{ team.city.name }}</p>
+<div class="image-overlay-result-container" style="background-image: url('{{ MEDIA_URL }}team_logos/z_arena.png');">
+    {% if result %}
+    <div class="prediction-result-container spaced-container">
+        <h3>Prediction Result for {{ team_name }} vs {{ opponent_name }}:</h3>
+        <p>The prediction result is: <strong>{{ result }}</strong></p>
     </div>
+{% else %}
+    <div class="prediction-result-container spaced-container">
+        <p>No prediction result available. Please try making a prediction first.</p>
+    </div>
+{% endif %}
 </div>
 {% endblock full_width_content %}
 
 {% block "content" %}
 <!-- Prediction Result Section -->
 {% if result %}
-    <div class="prediction-result-container spaced-container">
-        <h3>Prediction Result for {{ team_name }} vs {{ opponent_name }}:</h3>
-        <p>The prediction result is: <strong>{{ result }}</strong></p>
-    </div>
+   
 
     {% if team_averages and opponent_averages %}
         <div class="team-averages-container spaced-container">
@@ -131,7 +126,7 @@
     });
 </script>
 
-<a href="{% url 'predict' %}" class="btn btn-primary spaced-container">Back to Prediction Form</a>
+<a href="{% url 'predict' %}" class="btn btn-primary spaced-container1">Back to Prediction Form</a>
 
 {% endblock %}
 

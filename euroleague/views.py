@@ -285,7 +285,9 @@ def register(request):
 def search(request):
     query = request.GET.get('query')
     search_results = Team.objects.filter(Q(name__icontains=query) | Q(summary__icontains=query))
-    return render(request, 'search.html', {'teams': search_results, 'query': query})
+    team_list = Team.objects.all()  # Query to get all teams
+    return render(request, 'search.html', {'teams': search_results, 'query': query, 'team_list': team_list})
+
 
 
 

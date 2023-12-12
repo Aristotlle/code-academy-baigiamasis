@@ -13,44 +13,49 @@ class EuroLeagueFact(models.Model):
     def __str__(self):
         """String representation of the EuroLeagueFact."""
         return self.fact_text[:50] + '...' if len(self.fact_text) > 50 else self.fact_text
+    
+    class Meta:
+        verbose_name = "Fun facts"
+        verbose_name_plural = 'Fun facts'
 
 
 class City(models.Model):
-    name = models.CharField(max_length=200, help_text='Miesto pavadinimas')
+    name = models.CharField(max_length=200, help_text='City name')
 
     def __str__(self):
         return self.name
 
     class Meta:
-        verbose_name = 'Miestas'
-        verbose_name_plural = 'Miestai'
+        verbose_name = "City"
+        verbose_name_plural = 'City'
+
 
 class League(models.Model):
-    name = models.CharField(max_length=200, help_text='Lygos pavadinimas')
-    description = models.TextField(max_length=1000, blank=True, help_text='Lygos aprašymas')
+    name = models.CharField(max_length=200, help_text='League name')
+    description = models.TextField(max_length=1000, blank=True, help_text='League description')
 
     def __str__(self):
         return self.name
 
-    class Meta:
-        verbose_name = 'Lyga'
-        verbose_name_plural = 'Lygos'
+
         
         
 class Team(models.Model):
-    name = models.CharField(max_length=200, help_text='Komandos pavadinimas')
+    name = models.CharField(max_length=200, help_text='Team name')
     city = models.ForeignKey(City, on_delete=models.SET_NULL, null=True, related_name='teams')
     league = models.ForeignKey(League, on_delete=models.SET_NULL, null=True, related_name='teams')
-    summary = models.TextField(max_length=1000, help_text='Komandos aprašymas')
+    summary = models.TextField(max_length=1000, help_text='Team summary')
     logo = models.ImageField(upload_to='team_logos', null=True, blank=True)
     tm_code = models.IntegerField(help_text='Team Code used for predictions', null=True)
    
     def __str__(self):
         return self.name
-
+    
     class Meta:
-        verbose_name = 'Komanda'
-        verbose_name_plural = 'Komandos'
+        verbose_name = "Team"
+        verbose_name_plural = 'Team'
+
+
 
 class GameStats(models.Model):
     round_number = models.IntegerField(default=0)
@@ -77,21 +82,18 @@ class GameStats(models.Model):
     def __str__(self):
         return (f"Round {self.round_number}: {self.team.name} vs {self.opponent_team.name} - "
                 f"{'Win' if self.win_loss == 'W' else 'Loss'}")
-
-
+        
     class Meta:
-        verbose_name = "Komandų statistika"
-        verbose_name_plural = 'Komandų statistika'
+        verbose_name = "Game stats"
+        verbose_name_plural = 'Game stats'
 
-class belekas(models.Model):
-    name = models.CharField(max_length=500,null=True)
 
 class Profilis(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     nuotrauka = models.ImageField(default="profile_pics/default.png", upload_to="profile_pics")
 
     def __str__(self):
-        return f"{self.user.username} profilis"
+        return f"{self.user.username} profile"
     
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
@@ -102,5 +104,5 @@ class Profilis(models.Model):
             img.save(self.nuotrauka.path)
     
     class Meta:
-        verbose_name = "Profilis"
-        verbose_name_plural = 'Profilis'
+        verbose_name = "Profile"
+        verbose_name_plural = 'Profile'

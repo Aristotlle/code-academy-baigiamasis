@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% block "title" %}<title>Euroleague Info</title>{% endblock %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  {% load static %}
+  {% load widget_tweaks %}
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-sm bg-dark navbar-light">
+    <div class="container-fluid">
+      {% block nav %}
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link text-white" href="{% url 'index' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="{% url 'teams' %}">Teams</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="{% url 'predict' %}">Predictions</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item float-end">
+          <form action="{% url 'search' %}" method="get" class="form-inline my-2 my-md-0">
+            <input name="query" class="form-control" type="text" placeholder="Search">
+          </form>
+        </li>
+        {% if user.is_authenticated %}
+
+        
+
+        {% else %}
+
+        {% endif %}
+      </ul>
+      {% endblock %}
+    </div>
+  </nav>
+
+
+  <!-- New navigation bar for team logos -->
+{% load static %}
+  
+<nav class="navbar navbar-expand-lg navbar-light custom-navbar-bg">
+  <div class="container">
+    {% if team_list %}
+    <div class="navbar-nav">
+
+   {% for team in team_list %}
+  <a class="nav-item nav-link" href="{% url 'team-detail' team.id %}">
+    <img class="team-logo greyscale-logo" src="{{ team.logo.url }}" height="50px" alt="{{ team.name }}">
+  </a>
+{% endfor %}
+      {% else %}
+      <p>No teams are available.</p>
+    {% endif %}
+
+    </div>
+  </div>
+</nav>
+<div>{% block full_width_content %}{% endblock full_width_content %}</div>
+  <div class="container mt-0">
+    <div class="row">
+      <div class="col-sm-0"></div>
+      <div class="col-sm-12">{% block "content" %}{% endblock %}</div>
+      <div class="col-sm-0"></div>
+    </div>
+  </div>
+
+<div>{% block nav_content %}{% endblock nav_content %}</div>
+
+<div id="main" class="main">
+  {% block averages_content %}{% endblock averages_content %}
+</div>
+<div id="stats" class="stats">
+  {% block stats_content %}{% endblock stats_content %}
+</div>
+
+
+
+</body>
+</html>

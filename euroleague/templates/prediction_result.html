@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block full_width_content %}
+<!-- Full-width image with background image -->
+<div class="image-overlay-container" style="background-image: url('{{ MEDIA_URL }}team_logos/z_arena.png');">
+    
+    <!-- Overlay content -->
+    <div class="overlay-content">
+        {% if team.logo %}
+            <img src="{{ team.logo.url }}" alt="{{ team.name }}" class="team-logo-overlay">
+        {% else %}
+            <img src="{{ MEDIA_URL }}team_logos/no_image.png" alt="No image available" class="team-logo-overlay">
+        {% endif %}
+        
+        <h1 class="team-name-overlay">{{ team.name }}</h1>
+        <p class="team-city-overlay"><strong>City:</strong> {{ team.city.name }}</p>
+    </div>
+</div>
+{% endblock full_width_content %}
+
+{% block "content" %}
+<!-- Prediction Result Section -->
+{% if result %}
+    <div class="prediction-result-container">
+        <h3>Prediction Result:</h3>
+        <p>{{ result }}</p>
+    </div>
+{% else %}
+    <div class="prediction-result-container">
+        <p>No prediction result available.</p>
+    </div>
+{% endif %}
+
+<a href="{% url 'predict' %}" class="back-to-form-button">Back to Prediction Form</a>
+<!-- Replace 'predict_form' with the actual URL name of your prediction form page -->
+{% endblock %}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />

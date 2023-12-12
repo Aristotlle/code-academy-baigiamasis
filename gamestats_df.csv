@@ -1,0 +1,109 @@
+ROUND,TM NAME,OPP NAME,W/L,PTS_home,PTS_away,2PTM_home,2PTM_away,AST_home,AST_away,ST_home,ST_away,BLK_home,BLK_away,TR_home,TR_away,PIR_home,PIR_away,tm_code,opp_code
+1,Crvena Zvezda Meridianbet Belgrade,LDLC ASVEL Villeurbanne,1,94,73,16,17,19,17,10,5,2,3,40,31,105,81,4,9
+1,Maccabi Playtika Tel Aviv,Partizan Mozzart Bet Belgrade,1,96,81,27,26,31,18,11,7,2,2,34,26,121,88,10,13
+1,FC Barcelona,Anadolu Efes Istanbul,1,91,74,32,22,21,24,5,9,3,1,35,25,114,81,6,2
+1,FC Bayern Munich,ALBA Berlin,1,80,68,23,16,12,14,5,10,3,3,49,17,88,69,7,0
+1,Virtus Segafredo Bologna,Zalgiris Kaunas,0,79,82,23,18,21,11,8,6,1,3,32,30,90,80,16,17
+1,Fenerbahce Beko Istanbul,EA7 Emporio Armani Milan,1,85,82,18,18,15,18,5,9,1,3,27,41,74,101,8,5
+1,Panathinaikos AKTOR Athens,Olympiacos Piraeus,0,78,88,16,19,15,20,8,13,2,2,32,30,83,100,12,11
+1,Baskonia Vitoria-Gasteiz,Real Madrid,0,77,79,24,13,18,19,4,7,3,4,53,36,94,81,3,14
+1,Valencia Basket,AS Monaco,1,70,65,11,15,14,13,5,12,4,2,38,29,71,65,15,1
+2,Anadolu Efes Istanbul,Real Madrid,0,80,103,20,21,18,22,7,3,2,3,32,38,77,129,2,14
+2,LDLC ASVEL Villeurbanne,Partizan Mozzart Bet Belgrade,0,62,88,19,28,9,18,4,11,0,6,35,36,49,117,9,13
+2,ALBA Berlin,Baskonia Vitoria-Gasteiz,0,86,91,23,21,19,19,12,8,2,2,31,39,93,98,0,3
+2,Panathinaikos AKTOR Athens,FC Bayern Munich,1,78,71,17,23,12,11,6,7,2,3,32,34,89,68,12,7
+2,Zalgiris Kaunas,Crvena Zvezda Meridianbet Belgrade,1,79,74,25,20,17,13,5,3,5,1,34,41,94,71,17,4
+2,AS Monaco,Virtus Segafredo Bologna,0,59,83,17,13,9,18,4,4,1,1,35,46,52,93,1,16
+2,Olympiacos Piraeus,FC Barcelona,0,68,77,21,12,17,20,11,7,2,3,26,32,70,96,11,6
+2,Valencia Basket,Fenerbahce Beko Istanbul,1,77,74,24,15,17,13,4,6,2,6,42,32,88,67,15,8
+3,Partizan Mozzart Bet Belgrade,FC Barcelona,0,83,92,27,17,11,24,3,4,2,3,33,42,88,111,13,6
+3,Fenerbahce Beko Istanbul,Panathinaikos AKTOR Athens,1,83,69,18,19,20,11,6,5,1,1,34,28,93,67,8,12
+3,Anadolu Efes Istanbul,LDLC ASVEL Villeurbanne,1,89,84,22,18,20,15,7,6,2,3,34,24,105,81,2,9
+3,Baskonia Vitoria-Gasteiz,FC Bayern Munich,0,68,76,15,20,15,17,7,7,2,5,33,43,58,95,3,7
+3,EA7 Emporio Armani Milan,Olympiacos Piraeus,1,65,53,16,14,14,12,7,6,0,2,29,31,65,55,5,11
+3,Real Madrid,Zalgiris Kaunas,1,93,79,22,21,26,14,6,5,6,1,35,32,122,72,14,17
+3,Crvena Zvezda Meridianbet Belgrade,AS Monaco,0,76,82,17,21,19,23,9,5,1,2,30,35,83,101,4,1
+3,Valencia Basket,Maccabi Playtika Tel Aviv,1,75,66,20,15,20,18,8,2,3,3,35,27,89,59,15,10
+3,Virtus Segafredo Bologna,ALBA Berlin,1,87,76,22,20,21,12,9,6,2,1,29,32,102,76,16,0
+4,Fenerbahce Beko Istanbul,LDLC ASVEL Villeurbanne,1,101,86,21,21,22,20,8,4,1,2,37,31,120,92,8,9
+4,Olympiacos Piraeus,Partizan Mozzart Bet Belgrade,1,98,94,16,21,17,17,10,8,1,3,38,31,113,90,11,13
+4,Baskonia Vitoria-Gasteiz,Zalgiris Kaunas,0,82,99,16,18,17,21,6,1,3,1,33,39,90,114,3,17
+4,Real Madrid,EA7 Emporio Armani Milan,1,88,71,24,23,21,10,5,6,1,1,28,31,96,63,14,5
+4,AS Monaco,ALBA Berlin,1,86,75,25,15,24,16,7,6,2,1,33,31,107,74,1,0
+4,Anadolu Efes Istanbul,Valencia Basket,1,77,73,24,21,23,18,5,4,2,2,34,34,98,76,2,15
+4,Panathinaikos AKTOR Athens,Maccabi Playtika Tel Aviv,0,81,86,15,20,18,24,13,13,6,3,39,42,98,90,12,10
+4,Virtus Segafredo Bologna,Crvena Zvezda Meridianbet Belgrade,1,85,79,19,20,23,17,3,11,4,0,35,35,96,84,16,4
+4,FC Barcelona,FC Bayern Munich,1,98,59,21,14,22,12,7,5,3,1,42,37,133,50,6,7
+5,Partizan Mozzart Bet Belgrade,Crvena Zvezda Meridianbet Belgrade,1,88,86,25,16,17,22,8,9,2,4,32,28,99,94,13,4
+5,ALBA Berlin,EA7 Emporio Armani Milan,1,85,82,15,18,18,17,7,4,3,1,34,31,106,80,0,5
+5,Real Madrid,FC Barcelona,1,65,64,22,20,17,12,5,8,1,2,48,43,64,69,14,6
+5,AS Monaco,Maccabi Playtika Tel Aviv,1,107,79,31,22,23,18,8,4,1,1,35,35,132,78,1,10
+5,Olympiacos Piraeus,Anadolu Efes Istanbul,1,75,57,22,15,21,14,7,5,1,3,39,35,99,59,11,2
+5,Zalgiris Kaunas,Valencia Basket,0,72,87,20,24,15,15,7,5,1,2,27,31,74,94,17,15
+5,LDLC ASVEL Villeurbanne,Virtus Segafredo Bologna,0,84,87,22,22,21,22,6,8,1,6,27,27,95,101,9,16
+5,Panathinaikos AKTOR Athens,Baskonia Vitoria-Gasteiz,1,95,81,25,26,15,16,5,7,4,2,42,32,111,79,12,3
+5,FC Bayern Munich,Fenerbahce Beko Istanbul,0,67,76,20,20,12,10,5,5,4,4,39,48,66,81,7,8
+2,EA7 Emporio Armani Milan,Maccabi Playtika Tel Aviv,0,90,98,22,30,25,22,7,10,1,2,27,34,92,119,5,10
+6,Crvena Zvezda Meridianbet Belgrade,FC Bayern Munich,1,74,68,19,14,17,20,11,8,2,1,37,40,88,75,4,7
+6,Fenerbahce Beko Istanbul,Olympiacos Piraeus,1,79,77,23,21,22,22,6,2,3,2,25,29,92,89,8,11
+6,Zalgiris Kaunas,LDLC ASVEL Villeurbanne,0,88,91,21,27,15,24,4,7,2,1,29,26,91,117,17,9
+6,EA7 Emporio Armani Milan,AS Monaco,0,66,72,12,20,18,11,7,7,0,2,32,33,71,78,5,1
+6,Valencia Basket,ALBA Berlin,1,79,71,23,13,18,13,10,9,3,5,36,33,85,77,15,0
+6,FC Barcelona,Panathinaikos AKTOR Athens,1,80,72,27,17,10,15,9,4,2,1,42,29,88,68,6,12
+6,Baskonia Vitoria-Gasteiz,Partizan Mozzart Bet Belgrade,1,84,83,19,20,18,17,7,6,2,7,38,26,91,94,3,13
+6,Virtus Segafredo Bologna,Anadolu Efes Istanbul,1,93,81,26,21,22,10,10,4,2,2,32,25,110,81,16,2
+7,Olympiacos Piraeus,Baskonia Vitoria-Gasteiz,0,74,75,15,19,20,18,5,6,4,2,26,34,78,87,11,3
+7,Anadolu Efes Istanbul,Zalgiris Kaunas,1,86,82,21,21,13,18,7,7,4,2,38,34,102,83,2,17
+7,Maccabi Playtika Tel Aviv,FC Bayern Munich,1,93,90,20,27,20,14,12,5,2,1,24,29,103,84,10,7
+7,EA7 Emporio Armani Milan,Valencia Basket,1,83,52,19,9,17,14,12,7,5,1,40,37,109,41,5,15
+7,Partizan Mozzart Bet Belgrade,Fenerbahce Beko Istanbul,1,85,84,22,18,20,18,7,3,1,2,30,34,97,98,13,8
+7,Real Madrid,Virtus Segafredo Bologna,1,100,74,19,20,28,17,7,4,3,1,37,29,134,59,14,16
+7,ALBA Berlin,Panathinaikos AKTOR Athens,0,85,99,20,23,19,27,7,8,1,3,34,33,84,132,0,12
+7,FC Barcelona,Crvena Zvezda Meridianbet Belgrade,1,86,81,26,21,21,23,4,5,5,1,27,44,100,91,6,4
+7,AS Monaco,LDLC ASVEL Villeurbanne,1,80,70,16,18,18,15,10,4,1,3,35,43,89,80,1,9
+8,AS Monaco,Anadolu Efes Istanbul,0,82,89,19,22,11,24,4,7,0,3,37,27,88,107,1,2
+8,Maccabi Playtika Tel Aviv,Olympiacos Piraeus,0,74,79,20,22,17,21,5,3,8,3,36,42,86,85,10,11
+8,Valencia Basket,Real Madrid,0,73,76,28,16,15,15,3,6,1,5,28,31,63,94,15,14
+8,Virtus Segafredo Bologna,EA7 Emporio Armani Milan,1,86,79,22,17,20,18,6,4,2,2,29,34,104,82,16,5
+8,Crvena Zvezda Meridianbet Belgrade,Fenerbahce Beko Istanbul,1,87,56,20,15,18,13,8,2,0,6,41,25,108,52,4,8
+8,ALBA Berlin,LDLC ASVEL Villeurbanne,0,68,73,17,18,15,12,11,8,2,1,39,41,63,79,0,9
+8,Panathinaikos AKTOR Athens,Zalgiris Kaunas,1,73,71,17,15,14,16,8,5,4,3,25,34,79,62,12,17
+8,FC Bayern Munich,Partizan Mozzart Bet Belgrade,1,94,85,21,21,16,15,7,3,1,4,39,25,106,92,7,13
+8,Baskonia Vitoria-Gasteiz,FC Barcelona,1,94,71,19,15,19,16,8,5,2,3,40,35,113,67,3,6
+9,Maccabi Playtika Tel Aviv,Fenerbahce Beko Istanbul,1,78,73,24,11,12,14,10,3,3,3,45,33,79,73,10,8
+9,Olympiacos Piraeus,Crvena Zvezda Meridianbet Belgrade,1,88,83,17,15,26,14,3,7,5,2,39,31,115,76,11,4
+9,EA7 Emporio Armani Milan,Anadolu Efes Istanbul,1,92,76,20,20,21,16,1,6,0,1,32,24,105,84,5,2
+9,Real Madrid,AS Monaco,1,91,73,18,19,27,17,3,8,8,0,39,33,133,66,14,1
+9,Zalgiris Kaunas,FC Bayern Munich,1,74,73,14,23,14,17,5,5,1,4,32,39,73,90,17,7
+9,LDLC ASVEL Villeurbanne,Baskonia Vitoria-Gasteiz,0,81,88,22,12,18,23,3,2,0,2,37,35,93,103,9,3
+9,Panathinaikos AKTOR Athens,Virtus Segafredo Bologna,1,90,76,22,21,17,14,8,3,2,6,37,33,112,69,12,16
+9,FC Barcelona,Valencia Basket,1,74,70,21,21,17,8,5,4,4,0,43,39,92,60,6,15
+9,Partizan Mozzart Bet Belgrade,ALBA Berlin,1,89,74,19,16,19,19,6,5,3,0,29,29,106,69,13,0
+10,LDLC ASVEL Villeurbanne,FC Bayern Munich,0,100,101,20,22,22,18,10,5,1,4,37,49,114,110,9,7
+10,Maccabi Playtika Tel Aviv,FC Barcelona,0,90,92,25,24,22,15,7,7,4,1,33,37,102,87,10,6
+10,Panathinaikos AKTOR Athens,Valencia Basket,1,90,73,20,20,19,21,7,6,2,2,32,34,100,86,12,15
+10,Virtus Segafredo Bologna,Fenerbahce Beko Istanbul,1,87,79,22,26,21,19,4,6,2,1,34,32,99,90,16,8
+10,Real Madrid,ALBA Berlin,1,99,75,21,24,32,13,9,10,4,4,36,32,132,75,14,0
+10,Anadolu Efes Istanbul,Partizan Mozzart Bet Belgrade,1,100,94,19,21,18,24,16,6,1,1,16,31,114,105,2,13
+10,Olympiacos Piraeus,Zalgiris Kaunas,1,89,72,14,18,23,13,7,5,2,3,27,27,108,78,11,17
+10,Crvena Zvezda Meridianbet Belgrade,EA7 Emporio Armani Milan,0,71,93,18,15,17,11,5,7,3,1,27,33,74,103,4,5
+10,Baskonia Vitoria-Gasteiz,AS Monaco,0,75,77,16,19,16,12,3,5,3,5,36,39,82,84,3,1
+6,Maccabi Playtika Tel Aviv,Real Madrid,0,70,99,23,28,11,29,4,8,1,4,41,37,62,131,10,14
+11,Fenerbahce Beko Istanbul,Real Madrid,1,100,99,21,32,14,15,8,4,1,1,37,44,99,110,8,14
+11,AS Monaco,Olympiacos Piraeus,1,85,77,20,16,15,18,7,4,2,0,36,24,104,70,1,11
+11,Maccabi Playtika Tel Aviv,ALBA Berlin,1,102,81,20,20,27,18,12,6,3,6,36,34,120,84,10,0
+11,FC Bayern Munich,Virtus Segafredo Bologna,1,90,76,26,22,16,19,8,4,8,4,43,33,110,71,7,16
+11,EA7 Emporio Armani Milan,Zalgiris Kaunas,0,70,83,16,22,12,16,7,6,5,1,28,30,79,88,5,17
+11,Partizan Mozzart Bet Belgrade,Panathinaikos AKTOR Athens,1,92,87,30,26,15,20,9,11,2,5,37,37,93,106,13,12
+11,Crvena Zvezda Meridianbet Belgrade,Anadolu Efes Istanbul,1,97,83,26,18,21,16,8,8,3,2,43,26,119,78,4,2
+11,FC Barcelona,LDLC ASVEL Villeurbanne,1,101,92,20,22,26,23,4,11,3,1,24,27,119,110,6,9
+11,Valencia Basket,Baskonia Vitoria-Gasteiz,0,84,98,23,23,16,25,11,5,0,4,33,40,77,124,15,3
+12,Anadolu Efes Istanbul,Panathinaikos AKTOR Athens,1,71,68,21,17,17,14,6,6,4,3,40,32,80,73,2,12
+12,ALBA Berlin,Zalgiris Kaunas,1,64,62,15,12,9,12,11,7,2,4,36,34,63,62,0,17
+12,Olympiacos Piraeus,Real Madrid,0,71,77,14,16,15,17,6,6,0,5,35,34,69,98,11,14
+12,FC Bayern Munich,EA7 Emporio Armani Milan,1,91,84,23,17,13,15,3,9,4,1,44,22,105,83,7,5
+12,Partizan Mozzart Bet Belgrade,AS Monaco,1,89,85,21,22,16,17,3,6,2,0,36,36,99,81,13,1
+12,LDLC ASVEL Villeurbanne,Maccabi Playtika Tel Aviv,0,91,94,25,28,19,19,9,4,1,3,32,43,104,107,9,10
+12,Baskonia Vitoria-Gasteiz,Fenerbahce Beko Istanbul,1,80,79,21,22,14,19,7,6,2,0,36,30,81,90,3,8
+12,Valencia Basket,Crvena Zvezda Meridianbet Belgrade,1,85,81,20,18,19,19,12,4,1,1,30,37,94,96,15,4
+12,Virtus Segafredo Bologna,FC Barcelona,1,80,75,17,23,17,20,9,5,2,2,38,33,92,78,16,6

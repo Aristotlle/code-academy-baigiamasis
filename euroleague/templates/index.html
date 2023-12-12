@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block "content" %}
+<h1>Euroleague Information Center</h1>
+<p>Welcome to the ultimate hub for all things Euroleague! Dive into the heart of European basketball where passion meets history and every game is a story waiting to unfold.</p>
+
+<h2>Discover the Euroleague</h2>
+<p>The Euroleague is not just a basketball competition; it's a showcase of Europe's top basketball clubs battling for the prestigious title. With teams from diverse cities and cultures, the league forms a vibrant tapestry that represents the sport's finest in the region.</p>
+
+<p>From electrifying dunks to buzzer-beaters that keep fans on the edge of their seats, the Euroleague is a testament to the spirit of competition and teamwork. It's where legendary players carve their names into the annals of history and where up-and-coming stars rise to the challenge.</p>
+
+<p>Currently, our database is a trove of information on:</p>
+<ul>
+  <li><strong>Teams:</strong> {{ num_teams }} - A collection of the finest clubs that have graced the court with their prowess and skill.</li>
+  <li><strong>Leagues:</strong> {{ num_leagues }} - The different echelons of competition, each with its own unique stories and challenges.</li>
+  <li><strong>Cities:</strong> {{ num_cities }} - The homes of the teams, where fans gather to cheer, celebrate, and sometimes commiserate.</li>
+</ul>
+
+<h2>Your Euroleague Journey</h2>
+<p> Whether you are a seasoned aficionado or a new enthusiast, your interest and support for Euroleague basketball make you a valued member of our community. Keep coming back for updated stats, game highlights, and more!</p>
+
+<h2>Did You Know?</h2>
+<!-- Random EuroLeague Fact Display -->
+<div class="fact-section">
+    <div class="fact-header">
+    </div>
+    <div class="random-fact">
+        <p>{{ random_fact }}</p>
+    </div>
+</div>
+
+{% endblock %}

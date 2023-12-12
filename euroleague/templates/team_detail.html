@@ -1,0 +1,205 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block full_width_content %}
+<!-- Full-width image with background image -->
+<div class="image-overlay-container" style="background-image: url('{{ MEDIA_URL }}team_logos/z_arena.png');">
+    
+    <!-- Overlay content with semi-transparent background -->
+    <div class="overlay-content" style="background-color: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */ padding: 10px; border-radius: 10px;">
+      {% if team.logo %}
+          <img src="{{ team.logo.url }}" alt="{{ team.name }}" class="team-logo-overlay">
+      {% else %}
+          <img src="{{ MEDIA_URL }}team_logos/no_image.png" alt="No image available" class="team-logo-overlay">
+      {% endif %}
+      
+      <h1 class="team-name-overlay">{{ team.name }}</h1>
+      <p class="team-city-overlay"><strong>City:</strong> {{ team.city.name }}</p>
+  </div>
+</div>
+{% endblock full_width_content %}
+
+{% block "content" %}
+<div style="text-align: left;"> <!-- Center text below logo and name -->
+  <p><strong>Description:</strong> {{ team.summary }}</p> 
+  <p><strong>League:</strong> {{ team.league.name }}</p>  
+</div>
+{% endblock %}
+
+{% block nav_content %}
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-light justify-content-center">
+  <ul class="nav justify-content-center">
+    <li class="nav-item">
+      <a class="nav-link text-white" href="#" id="view-averages-link" onclick="hideShowAverages()">View Averages</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-white" href="#" id="view-stats-link" onclick="hideShowStats()">View Game Stats</a>
+    </li>
+  </ul>
+</nav>
+{% endblock nav_content %}
+
+{% block averages_content %}
+
+<style>
+  #main, #stats {
+      overflow: hidden;
+      transition: max-height 0.5s ease-out;
+      max-height: 0;
+  }
+
+  #main.open, #stats.open {
+      max-height: 10000px; /* Adjust this value based on the content size */
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      var averagesDiv = document.getElementById('main');
+      var statsDiv = document.getElementById('stats'); // Reference to the stats div
+
+      document.getElementById('view-averages-link').addEventListener('click', function() {
+          if (!averagesDiv.classList.contains('open')) {
+              toggleDiv(averagesDiv);
+          }
+          if (statsDiv.classList.contains('open')) {
+              toggleDiv(statsDiv); // Close stats if open
+          }
+      });
+
+      function toggleDiv(div) {
+          div.classList.toggle('open');
+          div.style.maxHeight = div.classList.contains('open') ? div.scrollHeight + "px" : null;
+      }
+  });
+</script>
+
+
+
+
+<div id="main" class="main" style="max-height: 10000px;">
+  <div class="stats-container">
+    <div class="stat-card">
+      <div class="stat-circle" data-value="{{ average_PTS }}">
+        <span class="stat-number">{{ average_PTS }}</span>
+      </div>
+      <p class="stat-label"><strong>Points</strong></p>
+    </div>
+  
+    <div class="stat-card">
+      <div class="stat-circle" data-value="{{ average_TR }}">
+        <span class="stat-number">{{ average_TR }}</span>
+      </div>
+      <p class="stat-label"><strong>Rebounds</strong></p>
+    </div>
+  
+    <div class="stat-card">
+      <div class="stat-circle" data-value="{{ average_AST }}">
+        <span class="stat-number">{{ average_AST }}</span>
+      </div>
+      <p class="stat-label"><strong>Assists</strong></p>
+    </div>
+  
+    <div class="stat-card">
+      <div class="stat-circle" data-value="{{ average_ST }}">
+        <span class="stat-number">{{ average_ST }}</span>
+      </div>
+      <p class="stat-label"><strong>Steals</strong></p>
+    </div>
+  
+    <div class="stat-card">
+      <div class="stat-circle" data-value="{{ average_BLK }}">
+        <span class="stat-number">{{ average_BLK }}</span>
+      </div>
+      <p class="stat-label"><strong>Blocks</strong></p>
+    </div>
+  
+    <div class="stat-card">
+      <div class="stat-circle" data-value="{{ average_PIR }}">
+        <span class="stat-number">{{ average_PIR }}</span>
+      </div>
+      <p class="stat-label"><strong>PIR</strong></p>
+    </div>
+  </div>
+</div>
+{% endblock averages_content %}
+{% block stats_content %}
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      var statsDiv = document.getElementById('stats');
+      var averagesDiv = document.getElementById('main'); // Reference to the averages div
+
+      document.getElementById('view-stats-link').addEventListener('click', function() {
+          if (!statsDiv.classList.contains('open')) {
+              toggleDiv(statsDiv);
+          }
+          if (averagesDiv.classList.contains('open')) {
+              toggleDiv(averagesDiv); // Close averages if open
+          }
+      });
+
+      function toggleDiv(div) {
+          div.classList.toggle('open');
+          div.style.maxHeight = div.classList.contains('open') ? div.scrollHeight + "px" : null;
+      }
+  });
+</script>
+
+
+<div id="stats" class="stats table-container" style="max-height: 10000px;">
+
+<table class="table-hover table-bordered table-dark">
+  <thead>
+    <tr>
+      <th class="centered-header" style="width: 5px;">Round Number</th>
+      <th class="centered-header" style="width: 250px;">Home Team</th>
+      <th class="centered-header" style="width: 250px;">Away Team</th>
+      <th class="centered-header" style="width: 80px;">W/L</th>
+      <th class="centered-header" style="width: 80px;">PTS Home</th>
+      <th class="centered-header" style="width: 80px;">PTS Away</th>
+      <th class="centered-header" style="width: 80px;">AST Home</th>
+      <th class="centered-header" style="width: 80px;">AST Away</th>
+      <th class="centered-header" style="width: 80px;">ST Home</th>
+      <th class="centered-header" style="width: 80px;">ST Away</th>
+      <th class="centered-header" style="width: 80px;">BLK Home</th>
+      <th class="centered-header" style="width: 80px;">BLK Away</th>
+      <th class="centered-header" style="width: 80px;">TR Home</th>
+      <th class="centered-header" style="width: 80px;">TR Away</th>
+      <th class="centered-header" style="width: 80px;">PIR Home</th>
+      <th class="centered-header" style="width: 80px;">PIR Away</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for stat in game_stats %}
+      <tr>
+        <td class="centered-header">{{ stat.round_number }}</td>
+        <td class="centered-header">{{ stat.team.name }}</td>
+        <td class="centered-header">{{ stat.opponent_team.name }}</td>
+        <td class="centered-header">{{ stat.win_loss }}</td>
+        <td class="centered-header">{{ stat.points_home }}</td>
+        <td class="centered-header">{{ stat.points_away }}</td>
+        <td class="centered-header">{{ stat.assists_home }}</td>
+        <td class="centered-header">{{ stat.assists_away }}</td>
+        <td class="centered-header">{{ stat.steals_home }}</td>
+        <td class="centered-header">{{ stat.steals_away }}</td>
+        <td class="centered-header">{{ stat.blocks_home }}</td>
+        <td class="centered-header">{{ stat.blocks_away }}</td>
+        <td class="centered-header">{{ stat.total_rebounds_home }}</td>
+        <td class="centered-header">{{ stat.total_rebounds_away }}</td>
+        <td class="centered-header">{{ stat.pir_home }}</td>
+        <td class="centered-header">{{ stat.pir_away }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+
+
+{% endblock stats_content %}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />

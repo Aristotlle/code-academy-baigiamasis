@@ -1,0 +1,198 @@
+.sidebar-nav {
+    margin-top: 20px;
+    padding: 0;
+    list-style: none;
+}
+
+
+
+.team-logo:hover {
+  transform: scale(1.3); /* Scale the image to 120% on hover */
+  transition: transform 0.2s; /* Add a smooth transition effect */
+}
+
+.team-name {
+  margin-top: 20px;
+}
+
+
+/* Statistics container styling */
+.stats-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; /* Ensure responsiveness */
+  margin: 20px 0;
+}
+
+.stat-card {
+  text-align: center;
+  margin: 10px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .stats-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stat-card {
+    width: 100%; /* Full width on smaller screens */
+    margin-bottom: 20px;
+  }
+
+
+  .random-fact p {
+    font-size: 16px;
+  }
+}
+
+
+.stats-container {
+  display: flex;
+  flex-wrap: wrap; /* Allows for wrapping items to the next line on smaller screens */
+  justify-content: center; /* Centers items in the container */
+  align-items: center; /* Aligns items vertically */
+  gap: 20px; /* Space between the cards */
+}
+
+.stat-card {
+  flex: 1; /* Each card will grow to fill the space */
+  min-width: 50px; /* Minimum width for each card, adjust as needed */
+  max-width: 100px; /* Maximum width for each card, adjust as needed */
+  text-align: center; /* Center the text within the card */
+}
+
+
+.stat-label {
+  margin-top: 10px; /* Spacing between the number and label text */
+}
+
+
+.image-overlay-container {
+  position: relative;
+  background-size: cover;
+  background-position:50% 75%; /* Adjust this to change the position */
+  height: 300px; /* Set a fixed height */
+}
+
+.overlay-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white; /* Adjust text color for visibility */
+}
+
+.team-logo-overlay {
+  height: 150px; /* Adjust as needed */
+  display: block;
+  margin: 0 auto; /* Center the image */
+}
+
+.team-name-overlay {
+  margin-top: 20px;
+  /* Additional styling for the team name */
+}
+
+/* navbar color */
+.custom-navbar-bg {
+  background-color: #000000; /* Example: Blue color */
+  /* You can add other styles if necessary */
+}
+
+/* navbar color */
+.custom-navbar1-bg {
+  background-color: #8d8d8d; /* Example: Blue color */
+  /* You can add other styles if necessary */
+}
+
+/* navbar greyscale */
+
+.greyscale-logo {
+  filter: grayscale(100%); /* Apply greyscale to all logos */
+  transition: filter 0.3s ease; /* Smooth transition for the filter effect */
+}
+
+.greyscale-logo:hover {
+  filter: none; /* Remove the filter on hover to show the original color */
+}
+
+
+/* for averages */
+
+
+.stats-container {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.stat-card {
+  flex-basis: 60%; /* Adjust as needed */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin: 2px;
+  text-align: center;
+}
+
+.stat-circle {
+  background-color: #8a8a8a; /* Choose your color */
+}
+
+.stat-number {
+  font-size: 2em; /* Adjust as needed */
+  font-weight: bold;
+}
+
+.stat-label {
+  font-size: 1em;
+  color: #666;
+}
+
+.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* for the game stat table */
+
+/* CSS for the table container */
+.table-container {
+  padding: 0 200px 100px; /* Adjust the padding values as needed */
+}
+
+
+.centered-header {
+    text-align: center;
+}
+
+#stats {
+  padding-top: 20px; /* Adjust this value to your preference */
+}
+
+
+/* index */
+
+.fact-section {
+  background-color: #ff6f00; /* The orange background color from the image */
+  color: white; /* White text color for contrast */
+  padding: 20px; /* Padding around the section */
+  border-radius: 10px; /* Rounded corners like in the image */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  max-width: 600px; /* Adjust based on your layout */
+  margin: 20px auto; /* Center the section */
+  text-align: center; /* Center align the text */
+}
+
+.fact-header h2 {
+  font-size: 24px; /* Larger font size for the header */
+  margin-bottom: 15px; /* Spacing between header and fact */
+}
+
+.random-fact p {
+  font-size: 18px; /* Large font size for the fact */
+  font-weight: bold; /* Bold font weight */
+}
+

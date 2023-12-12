@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div>
+    <h2>Game Stats for {{ team.name }}</h2>
+    <!-- Example of how you might list game stats -->
+    {% for game_stat in game_stats %}
+    <div>
+        <p>Game Date: {{ game_stat.date }}</p>
+        <p>Points: {{ game_stat.points }}</p>
+        <!-- Other stats -->
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

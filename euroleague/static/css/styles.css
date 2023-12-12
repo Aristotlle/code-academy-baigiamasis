@@ -228,3 +228,42 @@
 .spaced-container {
   margin-bottom: 30px; /* Adjust this value as needed */
 }
+
+/* for team_detail gamestats table */
+
+/* Container for the stats table */
+.stats.table-container {
+  width: 100%;
+  overflow-y: auto; /* Add scrollbar if needed */
+  max-height: 10000px; /* You might want to adjust this */
+}
+
+/* Styling for the table */
+.stats.table-container table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+/* Styling for table headers and cells */
+.stats.table-container th, .stats.table-container td {
+  border: 1px solid #ddd; /* Light gray border */
+  padding: 8px;
+  text-align: center;
+}
+
+/* Header row styling */
+.stats.table-container th {
+  background-color: #04AA6D; /* Green background */
+  color: white; /* White text */
+}
+
+/* Alternate row coloring for readability */
+.stats.table-container tr:nth-child(even) {
+  background-color: #f2f2f2; /* Light gray for even rows */
+}
+
+/* Row hover effect */
+.stats.table-container tr:hover {
+  background-color: #ddd; /* Slightly darker gray on hover */
+}

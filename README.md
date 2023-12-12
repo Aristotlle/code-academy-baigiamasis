@@ -46,3 +46,15 @@ Select Teams: Navigate to the prediction view where you can easily select a Home
 Leverage Ongoing Stats: The prediction algorithm takes into account the ongoing season's statistics for both teams. This ensures that the predictions are based on the most recent and relevant data.
 
 ![predictions](https://github.com/Aristotlle/code-academy-baigiamasis/assets/62259737/70e0dc62-a4de-4193-b1ba-3734ce88f27f)
+
+## Management functions:
+
+```ruby
+# To delete all GameStats records:
+python manage.py delete_gamestats
+```
+```ruby
+# To populate GameStats from a CSV file:
+python manage.py populate_gamestats path/to/your/file.csv
+```
+

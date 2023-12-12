@@ -22,18 +22,117 @@
 {% block "content" %}
 <!-- Prediction Result Section -->
 {% if result %}
-    <div class="prediction-result-container">
-        <h3>Prediction Result:</h3>
-        <p>{{ result }}</p>
+    <div class="prediction-result-container spaced-container">
+        <h3>Prediction Result for {{ team_name }} vs {{ opponent_name }}:</h3>
+        <p>The prediction result is: <strong>{{ result }}</strong></p>
     </div>
+
+    {% if team_averages and opponent_averages %}
+        <div class="team-averages-container spaced-container">
+            <table>
+                
+                <tr>
+                    <th>{{ team_name }} </th>
+                    <th>Statistic</th>
+                    <th>{{ opponent_name }}</th>
+                </tr>
+                <tr>
+                    <td>{{ team_averages.AveragePTS|floatformat:2 }}</td>
+                    <td>Points</td>
+                    <td>{{ opponent_averages.AveragePTS|floatformat:2 }}</td>
+                </tr>
+                <tr>
+                    <td>{{ team_averages.Average2PTM|floatformat:2 }}</td>
+                    <td>2PTS Made</td>
+                    <td>{{ opponent_averages.Average2PTM|floatformat:2 }}</td>
+                </tr>
+                <tr>
+                    <td>{{ team_averages.AverageAST|floatformat:2 }}</td>
+                    <td>Assists</td>
+                    <td>{{ opponent_averages.AverageAST|floatformat:2 }}</td>
+                </tr>
+                <tr>
+                    <td>{{ team_averages.AverageST|floatformat:2 }}</td>
+                    <td>Steals</td>
+                    <td>{{ opponent_averages.AverageST|floatformat:2 }}</td>
+                </tr>
+                <tr>
+                    <td>{{ team_averages.AverageBLK|floatformat:2 }}</td>
+                    <td>Blocks</td>
+                    <td>{{ opponent_averages.AverageBLK|floatformat:2 }}</td>
+                </tr>
+                <tr>
+                    <td>{{ team_averages.AverageTR|floatformat:2 }}</td>
+                    <td>Rebounds</td>
+                    <td>{{ opponent_averages.AverageTR|floatformat:2 }}</td>
+                </tr>
+                <tr>
+                    <td>{{ team_averages.AveragePIR|floatformat:2 }}</td>
+                    <td>PIR</td>
+                    <td>{{ opponent_averages.AveragePIR|floatformat:2 }}</td>
+                </tr>
+                <!-- Repeat for other statistics -->
+            </table>
+        </div>
+    {% endif %}
 {% else %}
-    <div class="prediction-result-container">
-        <p>No prediction result available.</p>
+    <div class="prediction-result-container spaced-container">
+        <p>No prediction result available. Please try making a prediction first.</p>
     </div>
 {% endif %}
 
-<a href="{% url 'predict' %}" class="back-to-form-button">Back to Prediction Form</a>
-<!-- Replace 'predict_form' with the actual URL name of your prediction form page -->
+
+
+<div class="chart-container spaced-container">
+    <canvas id="averages-chart"></canvas>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // Get averages data from Django context
+    var teamAverages = {{ team_averages|safe }};
+    var opponentAverages = {{ opponent_averages|safe }};
+
+    // Prepare data for the chart
+    var data = {
+        labels: Object.keys(teamAverages),
+        datasets: [
+            {
+                label: '{{ team_name }}',
+                data: Object.values(teamAverages),
+                backgroundColor: 'green',  // Color for team data
+            },
+            {
+                label: '{{ opponent_name }}',
+                data: Object.values(opponentAverages),
+                backgroundColor: 'orange',  // Color for opponent data
+            },
+        ],
+    };
+
+    // Get the canvas element
+    var ctx = document.getElementById('averages-chart').getContext('2d');
+
+    // Create and render the chart
+    var chart = new Chart(ctx, {
+        type: 'bar',  // Use a bar chart
+        data: data,
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,  // Start y-axis from 0
+                },
+            },
+            plugins: {
+                legend: {
+                    display: true,  // Display legend
+                },
+            },
+        },
+    });
+</script>
+
+<a href="{% url 'predict' %}" class="btn btn-primary spaced-container">Back to Prediction Form</a>
+
 {% endblock %}
 
 <link rel="stylesheet" href="{% static 'css/style.css' %}" />

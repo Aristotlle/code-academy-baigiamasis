@@ -196,3 +196,35 @@
   font-weight: bold; /* Bold font weight */
 }
 
+/* table for prediction result */
+
+.team-averages-container table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.team-averages-container th, .team-averages-container td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.team-averages-container th {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.team-averages-container tr:nth-child(even){background-color: #f2f2f2;}
+
+.team-averages-container tr:hover {background-color: #ddd;}
+
+.team-averages-container th, .team-averages-container td {
+  width: 33.33%;
+}
+
+/* for spaced in predict_result view */
+
+.spaced-container {
+  margin-bottom: 30px; /* Adjust this value as needed */
+}

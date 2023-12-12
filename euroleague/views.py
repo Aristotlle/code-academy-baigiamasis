@@ -21,7 +21,7 @@ import random
 class Round(Func):
     function = 'ROUND'
     template = '%(function)s(%(expressions)s, 1)'
-
+    
 
 def index(request):
     num_teams = Team.objects.all().count()
@@ -199,33 +199,63 @@ def predict_view(request):
             predicted_outcome = rf_model.predict(input_df)
             result = "Win" if predicted_outcome[0] == 1 else "Lose"
             
+            # Process and compare the stats
+            
+            processed_team_stats = {
+                'AveragePTS': team_stats['Average PTS'].iloc[0],
+                'Average2PTM': team_stats['Average 2PTM'].iloc[0],
+                'AverageAST': team_stats['Average AST'].iloc[0],
+                'AverageST': team_stats['Average ST'].iloc[0],
+                'AverageBLK': team_stats['Average BLK'].iloc[0],
+                'AverageTR': team_stats['Average TR'].iloc[0],
+                'AveragePIR': team_stats['Average PIR'].iloc[0],
+            }
+            processed_opponent_stats = {
+                'AveragePTS': opponent_stats['Average PTS'].iloc[0],
+                'Average2PTM': opponent_stats['Average 2PTM'].iloc[0],
+                'AverageAST': opponent_stats['Average AST'].iloc[0],
+                'AverageST': opponent_stats['Average ST'].iloc[0],
+                'AverageBLK': opponent_stats['Average BLK'].iloc[0],
+                'AverageTR': opponent_stats['Average TR'].iloc[0],
+                'AveragePIR': opponent_stats['Average PIR'].iloc[0],
+            }
+
+
+            # Storing processed data in session
+            request.session['team_averages'] = processed_team_stats
+            request.session['opponent_averages'] = processed_opponent_stats
+
+            # Storing prediction results in session
             request.session['team_name'] = team.name
             request.session['opponent_name'] = opponent.name
             request.session['outcome'] = "Win" if predicted_outcome[0] == 1 else "Lose"
-            
-             # Redirect to the result page
+
+            # Redirect to the result page
             return redirect('prediction_result')
 
- # Render the prediction form page in case of GET request or form invalidation
+    # Render the prediction form page in case of GET request or form invalidation
     return render(request, 'predict.html', {'form': form, 'team_list':team_list})
 
+
 def prediction_result_view(request):
-    # Extract the result from the session
+    # Extract the result and averages from the session
     context = {
         'team_name': request.session.get('team_name'),
         'opponent_name': request.session.get('opponent_name'),
         'result': request.session.get('outcome', 'No result available'),
-        'team_list': Team.objects.all()
+        'team_averages': request.session.get('team_averages', {}),
+        'opponent_averages': request.session.get('opponent_averages', {}),
+        'team_list': Team.objects.all(),
     }
-    # Clear the session after retrieving the result
-    for key in ['team_name', 'opponent_name', 'outcome']:
-        try:
-            del request.session[key]
-        except KeyError:
-            pass
+
+    # Clear the session after retrieving the data
+    for key in ['team_name', 'opponent_name', 'outcome', 'team_averages', 'opponent_averages']:
+        request.session.pop(key, None)
 
     # Render the result page
     return render(request, 'prediction_result.html', context)
+
+
 
 @csrf_protect
 def register(request):

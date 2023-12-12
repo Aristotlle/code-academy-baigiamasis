@@ -122,26 +122,50 @@
 
 /* for averages */
 
+@media screen and (max-width: 768px) {
+  .stat-card {
+    flex-basis: 100%; /* Full width on smaller screens */
+  }
+}
+
 
 .stats-container {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2px; /* Spacing between cards */
 }
 
 .stat-card {
-  flex-basis: 60%; /* Adjust as needed */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  margin: 2px;
-  text-align: center;
+  flex-basis: calc(66% - 20px); /* Adjust the width as needed */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  background-color: #f2f2f2; /* Light gray background */
+  padding: 15px;
+  border: 1px solid #ddd; /* Light gray border */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
 }
 
 .stat-circle {
-  background-color: #8a8a8a; /* Choose your color */
+  height: 100px;
+  width: 100px;
+  border-radius: 50%; /* Circular shape */
+  background-color: #04AA6D; /* Green background */
+  color: white; /* White text */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em; /* Larger text size */
 }
 
 .stat-number {
   font-size: 2em; /* Adjust as needed */
   font-weight: bold;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .stat-label {

@@ -4,15 +4,15 @@ import uuid
 from django.contrib.auth.models import User
 from PIL import Image
 
-
+# Model for Fun Facts about EuroLeague
 class EuroLeagueFact(models.Model):
-    fact_text = models.TextField()
-    date_added = models.DateTimeField(auto_now_add=True)
-    fact_category = models.CharField(max_length=100, blank=True)
+    fact_text = models.TextField() # Text content of the fun fact
+    date_added = models.DateTimeField(auto_now_add=True)# Date when the fact was added
+    fact_category = models.CharField(max_length=100, blank=True)# Category for the fact (optional)
 
     def __str__(self):
         """String representation of the EuroLeagueFact."""
-        return self.fact_text[:50] + '...' if len(self.fact_text) > 50 else self.fact_text
+        return self.fact_text[:50] + '...' if len(self.fact_text) > 50 else self.fact_text # Short representation of the fact
     
     class Meta:
         verbose_name = "Fun facts"

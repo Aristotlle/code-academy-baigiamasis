@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib import admin
 from .models import City, League, Team,  Profilis, GameStats, EuroLeagueFact
 
-# City Admin
+# CityAdmin: Configuration for how City models are displayed in the Django Admin interface. Other Class acts similarly
 class CityAdmin(admin.ModelAdmin):
     list_display = ('name', )
 
@@ -12,12 +12,13 @@ class LeagueAdmin(admin.ModelAdmin):
 
 
 
-# Team Admin
+# Team Admin.  Includes search and filter capabilities.
 class TeamAdmin(admin.ModelAdmin):
     list_display = ('name', 'city', 'league','tm_code')
     list_filter = ('city', 'league','tm_code')
     search_fields = ('name', 'city__name', 'league__name')
 
+# StatsAdmin: Detailed configuration for GameStats display in the admin. Includes custom methods for formatted display.
 class StatsAdmin(admin.ModelAdmin):
     list_display = (
         'round_number', 'team', 'opponent_team', 'win_loss_display', 
@@ -102,7 +103,7 @@ class EuroLeagueFactAdmin(admin.ModelAdmin):
     search_fields = ('fact_text',)
 
 
-# Registering models to admin site
+# Register models with their respective admin configurations
 admin.site.register(City, CityAdmin)
 admin.site.register(League, LeagueAdmin)
 admin.site.register(Team, TeamAdmin)

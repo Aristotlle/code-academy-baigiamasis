@@ -12,8 +12,9 @@ class Command(BaseCommand):
         csv_file_path = options['csv_file']
 
         try:
+             # Read the data from the specified CSV file into a pandas DataFrame
             df = pd.read_csv(csv_file_path)
-
+            # Loop through each row of the DataFrame and create GameStats objects  
             for _, row in df.iterrows():
                 team = Team.objects.get(tm_code=row['tm_code'])
                 opponent_team = Team.objects.get(tm_code=row['opp_code'])

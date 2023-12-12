@@ -3,20 +3,20 @@ from .models import Profilis, Team
 from django import forms
 from django.contrib.auth.models import User
 
-
+# Form for updating user information.
 class UserUpdateForm(forms.ModelForm):
     email = forms.EmailField()
 
     class Meta:
         model = User
         fields = ['username', 'email']
-
+# Form for updating Profilis (Profile) model instances.
 class ProfilisUpdateForm(forms.ModelForm):
     class Meta:
         model = Profilis
         fields = ['nuotrauka']
 
-
+# Form for making match predictions.
 class PredictionForm(forms.Form):
     team = forms.ChoiceField(label='Select Team')
     opponent = forms.ChoiceField(label='Select Opponent')

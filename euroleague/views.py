@@ -17,26 +17,26 @@ import pandas as pd
 from .utils import rf_model, load_averages_data
 import random
 
-
+# Define a custom SQL function for rounding numbers
 class Round(Func):
     function = 'ROUND'
     template = '%(function)s(%(expressions)s, 1)'
     
-
+# Define the index view
 def index(request):
     num_teams = Team.objects.all().count()
     num_leagues = League.objects.count()
     num_cities = City.objects.count()
     teams = Team.objects.all()
 
-    # Fetching a random EuroLeague fact
+   # Fetching a random EuroLeague fact
     all_facts = EuroLeagueFact.objects.all()
     if all_facts:
         random_fact = random.choice(all_facts).fact_text
     else:
         random_fact = 'No facts available at the moment.'
     
-    # Tracking the number of visits
+     # Tracking the number of visits
     num_visits = request.session.get('num_visits', 1)
     request.session['num_visits'] = num_visits + 1
 
@@ -47,24 +47,25 @@ def index(request):
         'num_cities': num_cities,
         'num_visits': num_visits,
         'team_list': teams,
-        'random_fact': random_fact,  # Add this line
+        'random_fact': random_fact,  
     }
 
     return render(request, 'index.html', context=context)
 
+# Define a class-based view for listing teams
 class TeamListView(generic.ListView):
     model = Team
     paginate_by = 18
     template_name = 'team_list.html'
-            
-        
+
+# Define a class-based view for displaying team details
 class TeamDetailView(generic.DetailView):
     model = Team
     template_name = 'team_detail.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        team = self.object  # 'self.object' contains the Team instance
+        team = self.object
         teams = Team.objects.all()
         
          # Calculate averages for the team for both home and away games
@@ -107,7 +108,7 @@ class TeamDetailView(generic.DetailView):
                 default=0,
                 output_field=FloatField()
             ),
-        ).order_by('round_number')  # Add this line to sort by round number
+        ).order_by('round_number') 
         
         
 
@@ -122,7 +123,6 @@ class TeamDetailView(generic.DetailView):
         )
 
         game_stats = GameStats.objects.filter(Q(team=team) | Q(opponent_team=team)).order_by('round_number')
-        # Update the context with the calculated averages
    # Update the context with the calculated averages
         context.update({
             'average_PTS': averages.get('average_PTS'),
@@ -139,13 +139,14 @@ class TeamDetailView(generic.DetailView):
         
         return context
     
+# Define a function to map team ID to code    
 def map_team_id_to_code(team_id):
     try:
         return Team.objects.get(id=team_id).tm_code
     except Team.DoesNotExist:
-        return None  # Handle as per your requirement
+        return None  
 
-
+# Define a view for predictions
 def predict_view(request):
     team_list = Team.objects.all()
     form = PredictionForm()

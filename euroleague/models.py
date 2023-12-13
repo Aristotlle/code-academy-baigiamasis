@@ -44,7 +44,7 @@ class Team(models.Model):
     name = models.CharField(max_length=200, help_text='Team name')
     city = models.ForeignKey(City, on_delete=models.SET_NULL, null=True, related_name='teams')
     league = models.ForeignKey(League, on_delete=models.SET_NULL, null=True, related_name='teams')
-    summary = models.TextField(max_length=1000, help_text='Team summary')
+    summary = models.TextField(max_length=3000, help_text='Team summary')
     logo = models.ImageField(upload_to='team_logos', null=True, blank=True)
     tm_code = models.IntegerField(help_text='Team Code used for predictions', null=True)
    

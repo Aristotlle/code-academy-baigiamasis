@@ -67,6 +67,8 @@ class TeamDetailView(generic.DetailView):
         context = super().get_context_data(**kwargs)
         team = self.object
         teams = Team.objects.all()
+        wins = GameStats.objects.filter(team=team, win_loss='W').count()
+        losses = GameStats.objects.filter(team=team, win_loss='L').count()
         
          # Calculate averages for the team for both home and away games
         stats = GameStats.objects.filter(
@@ -132,7 +134,9 @@ class TeamDetailView(generic.DetailView):
             'average_PIR': averages.get("average_PIR"),
             'average_AST': averages.get('average_AST'),
             'game_stats': game_stats,
-            'team_list': teams
+            'team_list': teams,
+            'wins':wins,
+            'losses': losses
             # Updates for other averages...
             
         })

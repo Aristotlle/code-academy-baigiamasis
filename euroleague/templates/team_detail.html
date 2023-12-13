@@ -4,26 +4,50 @@
 
 {% block full_width_content %}
 <!-- Full-width image with background image -->
-<div class="image-overlay-container" style="background-image: url('{{ MEDIA_URL }}team_logos/z_arena.png');">
-    
-    <!-- Overlay content with semi-transparent background -->
-    <div class="overlay-content" style="background-color: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */ padding: 10px; border-radius: 10px;">
-      {% if team.logo %}
-          <img src="{{ team.logo.url }}" alt="{{ team.name }}" class="team-logo-overlay">
-      {% else %}
-          <img src="{{ MEDIA_URL }}team_logos/no_image.png" alt="No image available" class="team-logo-overlay">
-      {% endif %}
-      
-      <h1 class="team-name-overlay">{{ team.name }}</h1>
-      <p class="team-city-overlay"><strong>City:</strong> {{ team.city.name }}</p>
-  </div>
+<div class="image-overlay-container" style="background-image: url('{{ MEDIA_URL }}team_logos/z_arena.png'); color: white; height: 500px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+
+    <!-- Container for Team Name centered -->
+    <div style="margin-bottom: 20px; margin-top: -100px;">
+        <h1 style="font-size: 2em;">{{ team.name }} Istanbul Roster</h1>
+    </div>
+
+    <!-- Container for Logo centered -->
+    <div>
+        <div style="width: 180px; height: 180px; border-radius: 50%; background: white; display: flex; align-items: center; justify-content: center; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);">
+            {% if team.logo %}
+                <!-- Smaller logo within the circle -->
+                <img src="{{ team.logo.url }}" alt="{{ team.name }}" style="width: 120px; height: 120px; object-fit: contain;">
+            {% else %}
+                <img src="{{ MEDIA_URL }}team_logos/no_image.png" alt="No image available" style="width: 120px; height: 120px; object-fit: contain;">
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Wins and Losses -->
+    <div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); font-size: 1.5em;">
+        <div style="display: inline-block; text-align: center; margin-right: 20px;">
+            <strong>Wins</strong>
+            <div>{{ wins }}</div>
+        </div>
+        <div style="display: inline-block; text-align: center;">
+            <strong>Losses</strong>
+            <div>{{ losses }}</div>
+        </div>
+    </div>
 </div>
 {% endblock full_width_content %}
 
 {% block "content" %}
-<div style="text-align: left;"> <!-- Center text below logo and name -->
-  <p><strong>Description:</strong> {{ team.summary }}</p> 
-  <p><strong>League:</strong> {{ team.league.name }}</p>  
+<div style="text-align: center; font-family: Arial, sans-serif; color: #333; background-color: #f4f4f4; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); max-width: 2000px; margin: auto;">
+  <!-- Center text below logo and name -->
+  <p style="font-size: 18px; margin-bottom: 10px;">
+    <strong style="color: #07932f; font-size: 20px;">Description:</strong>
+    <span style="color: #555;">{{ team.summary }}</span>
+  </p>
+  <p style="font-size: 18px; margin-bottom: 10px;">
+    <strong style="color: #07932f; font-size: 20px;">League:</strong>
+    <span style="color: #555;">{{ team.league.name }}</span>
+  </p>
 </div>
 {% endblock %}
 

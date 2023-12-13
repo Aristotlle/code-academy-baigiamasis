@@ -4,7 +4,11 @@
     list-style: none;
 }
 
-
+/* navbar color */
+.custom-navbar-bg1 {
+  background-color: #006003; /* Example: Blue color */
+  /* You can add other styles if necessary */
+}
 
 .team-logo:hover {
   transform: scale(1.3); /* Scale the image to 120% on hover */
@@ -74,7 +78,9 @@
   position: relative;
   background-size: cover;
   background-position:50% 75%; /* Adjust this to change the position */
-  height: 300px; /* Set a fixed height */
+  height: 500px; /* Set a fixed height */
+  align-items: center; /* Center children vertically */
+  justify-content: center; /* Center children horizontally */
 }
 
 .image-overlay-result-container {
@@ -83,7 +89,7 @@
   align-items: center; /* Center vertically */
   background-size: cover; /* Ensure the background covers the entire container */
   background-position:50% 75%; /* Adjust this to change the position */
-  height: 300px; /* Set a fixed height */
+  height: 500px; /* Set a fixed height */
 }
 
 .overlay-content {

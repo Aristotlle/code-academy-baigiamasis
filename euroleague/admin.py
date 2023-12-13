@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib import admin
-from .models import City, League, Team,  Profilis, GameStats, EuroLeagueFact
+from .models import City, League, Team, GameStats, EuroLeagueFact
 
 # CityAdmin: Configuration for how City models are displayed in the Django Admin interface. Other Class acts similarly
 class CityAdmin(admin.ModelAdmin):
@@ -108,5 +108,4 @@ admin.site.register(City, CityAdmin)
 admin.site.register(League, LeagueAdmin)
 admin.site.register(Team, TeamAdmin)
 admin.site.register(GameStats, StatsAdmin)
-admin.site.register(Profilis)  
 admin.site.register(EuroLeagueFact, EuroLeagueFactAdmin)

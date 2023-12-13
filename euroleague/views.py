@@ -9,7 +9,7 @@ from django.views.generic.edit import FormMixin
 from django.core.paginator import Paginator
 from django.db.models import Case, When, FloatField, Avg, Q, Func, F
 from django.contrib.auth.decorators import login_required
-from .forms import  UserUpdateForm, ProfilisUpdateForm, PredictionForm
+from .forms import  PredictionForm
 import pickle
 import os
 from django.conf import settings
@@ -293,25 +293,3 @@ def search(request):
     team_list = Team.objects.all()  # Query to get all teams
     return render(request, 'search.html', {'teams': search_results, 'query': query, 'team_list': team_list})
 
-
-
-
-@login_required
-def profilis(request):
-    if request.method == "POST":
-        u_form = UserUpdateForm(request.POST, instance=request.user)
-        p_form = ProfilisUpdateForm(request.POST, request.FILES, instance=request.user.profilis)
-        if u_form.is_valid() and p_form.is_valid():
-            u_form.save()
-            p_form.save()
-            messages.success(request, f"Profilis atnaujintas")
-            return redirect('profilis')
-    else:
-        u_form = UserUpdateForm(instance=request.user)
-        p_form = ProfilisUpdateForm(instance=request.user.profilis)
-
-    context = {
-        'u_form': u_form,
-        'p_form': p_form,
-    }
-    return render(request, 'profilis.html', context)

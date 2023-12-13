@@ -8,7 +8,7 @@ import pickle
 
 # columns_needed = ['ROUND','DATE', 'TM NAME', 'OPP NAME','H/A', 'W/L','PTS','2PTM','2PTA','2PT%','3PTM','3PTA','3PT%','FGM','FGA','FG%','FTM','FTA','FT%']
 
-file_path = r'C:\Modesto\PythonKursai\Baigiamasis\mysite_after_profile\statistics\Teams stats.xlsx'
+file_path = r'C:\Modesto\PythonKursai\Baigiamasis2\code-academy-baigiamasis\euroleague\statistics\Teams stats.xlsx'
 teams_gbg_df = pd.read_excel(file_path, sheet_name='TEAMS_GbG', header=2)
 columns_needed = ['TM NAME', 'OPP NAME','H/A', 'W/L','PTS','2PTM','AST','ST','BLK','TR','VAL']
 
@@ -156,7 +156,7 @@ def calculate_team_avg(transformed_df):
 
 averages_df = calculate_team_avg(transformed_df=transformed_df)
 
-# averages_df.to_csv(r"C:\Modesto\PythonKursai\Baigiamasis\mysite_after_profile\statistics\averages_df.csv", index=False)
+# averages_df.to_csv(r"C:\Modesto\PythonKursai\Baigiamasis2\code-academy-baigiamasis\euroleague\statistics\averages_df.csv", index=False)
 
 
 # Example: Predicting a match between ALBA Berlin (tm_code = 0) and AS Monaco (tm_code = 1)

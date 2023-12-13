@@ -73,7 +73,7 @@ rf.fit(X_train, y_train)
 
 y_trained_pred = rf.predict(X_train)
 
-# print(X_train, X_test)
+
 
 # for pred, true_pred in zip(y_trained_pred, y_train['W/L'].to_list()):
 #     print(pred, true_pred)
@@ -159,11 +159,6 @@ averages_df = calculate_team_avg(transformed_df=transformed_df)
 # averages_df.to_csv(r"C:\Modesto\PythonKursai\Baigiamasis\mysite_after_profile\statistics\averages_df.csv", index=False)
 
 
-print(averages_df.sort_values('tm_code'))
-
-
-
-
 # Example: Predicting a match between ALBA Berlin (tm_code = 0) and AS Monaco (tm_code = 1)
 
 # Extracting statistics for both teams
@@ -188,13 +183,14 @@ print(averages_df.sort_values('tm_code'))
 # columns = ['tm_code', 'opp_code', 'H/A_home', 'H/A_away', 'PTS_home', 'PTS_away', '2PTM_home', '2PTM_away']  # Include other column names as per your model
 # input_df = pd.DataFrame(input_data, columns=columns)
 
-# print(input_df)
-
 # # Now you can use this DataFrame for prediction
+
 # predicted_outcome = rf.predict(input_df)
 # print("Predicted Outcome:", "Win for ALBA Berlin" if predicted_outcome[0] == 1 else "Lose for ALBA Berlin")
 
-# filename = "predict_win.pkl"  # It's common to use .pkl as the file extension for pickle files
 
+
+
+# filename = "predict_win.pkl"  # It's common to use .pkl as the file extension for pickle files
 # # Assuming 'model' is your trained model
 # pickle.dump(rf, open(filename, 'wb'))  # 'wb' indicates writing in binary mode

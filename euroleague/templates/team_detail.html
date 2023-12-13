@@ -80,24 +80,35 @@
 </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-      var averagesDiv = document.getElementById('main');
-      var statsDiv = document.getElementById('stats'); // Reference to the stats div
+ document.addEventListener('DOMContentLoaded', function() {
+    var averagesDiv = document.getElementById('main');
+    var statsDiv = document.getElementById('stats');
 
-      document.getElementById('view-averages-link').addEventListener('click', function() {
-          if (!averagesDiv.classList.contains('open')) {
-              toggleDiv(averagesDiv);
-          }
-          if (statsDiv.classList.contains('open')) {
-              toggleDiv(statsDiv); // Close stats if open
-          }
-      });
+    document.getElementById('view-averages-link').addEventListener('click', function(event) {
+        event.preventDefault(); // Add this line to prevent default action
+        if (!averagesDiv.classList.contains('open')) {
+            toggleDiv(averagesDiv);
+        }
+        if (statsDiv.classList.contains('open')) {
+            toggleDiv(statsDiv);
+        }
+    });
 
-      function toggleDiv(div) {
-          div.classList.toggle('open');
-          div.style.maxHeight = div.classList.contains('open') ? div.scrollHeight + "px" : null;
-      }
-  });
+    document.getElementById('view-stats-link').addEventListener('click', function(event) {
+        event.preventDefault(); // Add this line to prevent default action
+        if (!statsDiv.classList.contains('open')) {
+            toggleDiv(statsDiv);
+        }
+        if (averagesDiv.classList.contains('open')) {
+            toggleDiv(averagesDiv);
+        }
+    });
+
+    function toggleDiv(div) {
+        div.classList.toggle('open');
+        div.style.maxHeight = div.classList.contains('open') ? div.scrollHeight + "px" : null;
+    }
+});
 </script>
 
 
@@ -152,27 +163,6 @@
 {% block stats_content %}
 
 
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-      var statsDiv = document.getElementById('stats');
-      var averagesDiv = document.getElementById('main'); // Reference to the averages div
-
-      document.getElementById('view-stats-link').addEventListener('click', function() {
-          if (!statsDiv.classList.contains('open')) {
-              toggleDiv(statsDiv);
-          }
-          if (averagesDiv.classList.contains('open')) {
-              toggleDiv(averagesDiv); // Close averages if open
-          }
-      });
-
-      function toggleDiv(div) {
-          div.classList.toggle('open');
-          div.style.maxHeight = div.classList.contains('open') ? div.scrollHeight + "px" : null;
-      }
-  });
-</script>
 
 
 <div id="stats" class="stats table-container" style="max-height: 10000px;">

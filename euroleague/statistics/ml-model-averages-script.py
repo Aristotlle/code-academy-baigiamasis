@@ -28,6 +28,7 @@ for i in range(0, len(df), 2):
         home_row = row2
         away_row = row1
 
+    # combine home and away rows for specific parameters
     combined_row = {
         "ROUND" : home_row["ROUND"],
         "TM NAME": home_row["TM NAME"],
@@ -52,17 +53,17 @@ for i in range(0, len(df), 2):
     transformed_data.append(combined_row)
 transformed_df = pd.DataFrame(transformed_data)
 
-
+#W/L transformed to integer, 1 if W and 0 if L
 transformed_df['W/L']=(transformed_df['W/L'] == 'W').astype("int")
 
-
+# add tm_code and opp_code to identify the teams with numbers
 le = LabelEncoder()
 le.fit(df["TM NAME"])
 transformed_df['tm_code'] = le.transform(transformed_df["TM NAME"])
 transformed_df['opp_code'] = le.transform(transformed_df["OPP NAME"])
 
 
-
+#ML model creation
 X=transformed_df[['tm_code','opp_code','PTS_home','PTS_away','2PTM_home','2PTM_away','AST_home','AST_away','ST_home','ST_away','BLK_home','BLK_away','TR_home','TR_away','PIR_home','PIR_away']]
 y = transformed_df[['W/L']]
 rf = RandomForestClassifier(n_estimators=50, min_samples_split=10, random_state=1)
@@ -74,16 +75,7 @@ rf.fit(X_train, y_train)
 y_trained_pred = rf.predict(X_train)
 
 
-
-# for pred, true_pred in zip(y_trained_pred, y_train['W/L'].to_list()):
-#     print(pred, true_pred)
-
-
-# print(f"{rf.score(X_train,y_train)} Train")
-# print(f"{rf.score(X_test,y_test)} Test ")
-
-
-
+#creating a database for averages, script that will modify the database and only exports needed stats
 def calculate_team_avg(transformed_df):
     # Get unique team codes and names
     unique_teams = transformed_df[['tm_code', 'TM NAME']].drop_duplicates()
@@ -158,6 +150,7 @@ averages_df = calculate_team_avg(transformed_df=transformed_df)
 
 # averages_df.to_csv(r"C:\Modesto\PythonKursai\Baigiamasis2\code-academy-baigiamasis\euroleague\statistics\averages_df.csv", index=False)
 
+# The code below is needed for the future for double checks before publishing the code 
 
 # Example: Predicting a match between ALBA Berlin (tm_code = 0) and AS Monaco (tm_code = 1)
 
